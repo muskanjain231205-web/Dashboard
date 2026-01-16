@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRM Dashboard</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- CSS FILE -->
+<link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2>HRM Admin</h2>
+  <nav class="menu">
+    <a class="active">Dashboard</a>
+    <a>Employees</a>
+    <a>Attendance</a>
+    <a>Payroll</a>
+    <a>Leave</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<section class="main">
+
+  <div class="header">
+    <h1>Dashboard</h1>
+    <div class="top-actions">
+      <div class="bell">🔔<span id="notifCount">0</span></div>
+      <div class="profile">Admin</div>
+    </div>
+  </div>
+
+  <!-- QUICK ACTIONS -->
+  <div class="actions">
+    <div class="action">+ Add Employee</div>
+    <div class="action">🗓 Mark Attendance</div>
+    <div class="action">🧾 Run Payroll</div>
+    <div class="action">📤 Export Report</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="widgets">
+    <div class="widget"><small>Total Employees</small><h2 id="totalEmployees">--</h2></div>
+    <div class="widget"><small>Present Today</small><h2 id="presentToday">--</h2></div>
+    <div class="widget"><small>Pending Leaves</small><h2 id="pendingLeaves">--</h2></div>
+    <div class="widget"><small>Payroll (Month)</small><h2 id="monthlyPayroll">--</h2></div>
+  </div>
+
+  <!-- ATTENDANCE -->
+  <div class="attendance">
+    <h3>Today's Attendance</h3>
+    <div class="bar">
+      <span id="attendanceBar"></span>
+    </div>
+  </div>
+
+  <!-- EMP TABLE -->
+  <div class="table-card">
+    <div class="filters">
+      <input id="searchInput" placeholder="Search employee">
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Status</th>
+          <th>Joined</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTable"></tbody>
+    </table>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="activity">
+    <h3>Recent Activities</h3>
+    <ul id="activityList"></ul>
+  </div>
+
+</section>
+
+<!-- JS FILE -->
+<script src="dashboard.js"></script>
+</body>
+</html>
